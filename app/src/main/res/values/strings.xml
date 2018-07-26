@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">Alertium Tracker</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!--NavDrawer Categories-->
+    <string name="news">News</string>
+    <string name="alerts">Alerts</string>
+    <string name="invasions">Invasions</string>
+    <string name="syndicate_missions">Syndicate Missions</string>
+    <string name="void_fissures">Void Fissures</string>
+    <string name="sorties">Sorties</string>
+    <string name="cetus_cycle">Cetus Time of Day</string>
+
+    <!--Image Content Descriptions-->
+    <string name="nav_header_content_desc">Navigation Drawer Header uses app\'s icon.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

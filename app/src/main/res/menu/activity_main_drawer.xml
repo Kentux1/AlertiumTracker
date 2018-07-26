@@ -1,2 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu />
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/nav_news"
+        android:icon="@drawable/news_gold"
+        android:title="@string/news" />
+    <item
+        android:id="@+id/nav_alerts"
+        android:icon="@drawable/alert_gold"
+        android:title="@string/alerts" />
+    <item
+        android:id="@+id/nav_invasions"
+        android:icon="@drawable/invasions_gold"
+        android:title="@string/invasions" />
+    <item
+        android:id="@+id/nav_syndicate"
+        android:icon="@drawable/syndicate_gold"
+        android:title="@string/syndicate_missions" />
+    <item
+        android:id="@+id/nav_void_fissures"
+        android:icon="@drawable/voidfissuresicongold"
+        android:title="@string/void_fissures" />
+    <item
+        android:id="@+id/nav_sorties"
+        android:icon="@drawable/sortie_gold"
+        android:title="@string/sorties" />
+    <item
+        android:id="@+id/nav_cetus_cycle"
+        android:icon="@drawable/day_night_gold"
+        android:title="@string/cetus_cycle" />
+
+</menu>
