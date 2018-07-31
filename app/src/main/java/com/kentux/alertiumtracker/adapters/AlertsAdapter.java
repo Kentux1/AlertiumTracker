@@ -56,13 +56,41 @@ public class AlertsAdapter extends RecyclerView.Adapter<AlertsAdapter.AlertsView
             String alertMissionRewardString = mContext.getString(R.string.mission_reward)
                     + " "
                     + alertMissionReward;
-            String alertTimeLeft = alerts.getmTimeLeft();
-            int minutes = Integer.parseInt(alertTimeLeft.subSequence(0,
+            String alertTimeLeft = alerts.getmTimeLeft().trim();
+            /*int minutes = Integer.parseInt(alertTimeLeft.subSequence(0,
                     alertTimeLeft.indexOf("m")).toString());
-            int seconds = Integer.parseInt(alertTimeLeft.
-                    subSequence(alertTimeLeft.indexOf("m") + 1,
-                            alertTimeLeft.indexOf("s")).toString());
-            int totalMillis = (minutes * 60000) + (seconds * 1000);
+            int seconds = Integer.parseInt(alertTimeLeft.subSequence(alertTimeLeft.indexOf("m") + 1,
+                            alertTimeLeft.indexOf("s")).toString().trim());
+            int totalMillis = (minutes * 60000) + (seconds * 1000);*/
+            String reverseTimeLeft = new StringBuffer(alertTimeLeft).reverse().toString();
+            String[] segments = reverseTimeLeft.split(" ");
+            int size = segments.length;
+            int days = 0;
+            int hours = 0;
+            int minutes = 0;
+            int seconds = 0;
+            switch (size) {
+                case 4:
+                    String sDays = new StringBuffer(segments[3]).reverse().toString().trim();
+                    days = Integer.parseInt(sDays.substring(0, sDays.length() - 1));
+                case 3:
+                    String sHours = new StringBuffer(segments[2]).reverse().toString().trim();
+                    hours = Integer.parseInt(sHours.substring(0, sHours.length() - 1));
+                case 2:
+                    String sMinutes = new StringBuffer(segments[1]).reverse().toString().trim();
+                    minutes = Integer.parseInt(sMinutes.substring(0, sMinutes.length() - 1));
+                case 1:
+                    String sSeconds = new StringBuffer(segments[0]).reverse().toString().trim();
+                    seconds = Integer.parseInt(sSeconds.substring(0, sSeconds.length() - 1));
+                    break;
+            }
+
+            int totalMillis = (days * 24 * 3600 * 1000)
+                    + (hours * 3600 * 1000)
+                    + (minutes * 60000)
+                    + (seconds * 1000);
+
+
 
             if (!alertRewardThumb.isEmpty()) {
                 Picasso.get()
